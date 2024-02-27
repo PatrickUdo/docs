@@ -1,0 +1,46 @@
+---
+title: 'Users'
+description: 'users code'
+---
+
+<CodeGroup>
+```lua lua
+local charactersModule = LoadModule("prisma_database", 'characters')
+
+--Get user by id 
+-- first value is the table colmn
+-- second value is the value you wanna search
+local character = usersModule.getCharacterByIdentifier("identifier", 'rockstar')
+
+
+--Updating a user
+
+-- optional values stay the same when leaving them out of the table
+updateValues = {
+    identifier = "test", --required
+    firstname = 'admin', -- optional
+    lastname = 'test' -- optional
+}
+
+charactersModule.updateCharacter("rockstar", updateValues)
+
+
+-- Creating a user
+-- optional values get the default value when left out
+newChar = {
+    identifier = "test", --required
+    firstname = 'admin', -- optional
+    lastname = 'test' -- optional
+}
+
+charactersModule.createCharacter(newChar)
+```
+</CodeGroup>
+
+## Fields
+- userid
+- firstname
+- lastname 
+- dateofbirth 
+- skin (json is encoded and decoded autmaticly)
+- inventory (json is encoded and decoded autmaticly)

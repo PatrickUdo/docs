@@ -22,7 +22,8 @@
     {
       "group": "Database",
       "pages": [
-        "database/users"
+        "database/users",
+        "database/characters"
       ]
     }
   ],
