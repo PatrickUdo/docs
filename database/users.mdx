@@ -1,0 +1,38 @@
+---
+title: 'Users'
+description: 'users code'
+---
+
+<CodeGroup>
+```lua lua
+local usersModule = LoadModule("prisma_database", 'users')
+
+--Get user by id 
+-- first value is the table colmn
+-- second value is the value you wanna search
+local user = usersModule.getUserByIdentifier("identifier", 'rockstar')
+
+
+--Updating a user
+
+-- optional values stay the same when leaving them out of the table
+updateValues = {
+    identifier = "test", --required
+    group = 'admin', -- optional
+    priority = 20 -- optional
+}
+
+usersModule.updateUser("rockstar", updateValues)
+
+
+-- Creating a user
+-- optional values get the default value when left out
+newUser = {
+    identifier = "test", --required
+    group = 'admin', -- optional
+    priority = 20 -- optional
+}
+
+usersModule.updateUser(newUser)
+```
+</CodeGroup>
